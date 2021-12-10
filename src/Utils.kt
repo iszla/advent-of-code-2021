@@ -8,6 +8,9 @@ import java.security.MessageDigest
  */
 fun readInput(name: String): List<String> = File("resources", "$name.txt").readLines()
 
+fun <T> readInput(name: String, converter: (String) -> T): List<T> =
+    File("resources", "$name.txt").readLines().map { converter(it) }
+
 fun readInputToInt(name: String): List<Int> = File("resources", "$name.txt").readLines().map { parseInt(it) }
 
 /**
