@@ -1,11 +1,14 @@
 import java.io.File
+import java.lang.Integer.parseInt
 import java.math.BigInteger
 import java.security.MessageDigest
 
 /**
  * Reads lines from the given input txt file.
  */
-fun readInput(name: String) = File("src", "$name.txt").readLines()
+fun readInput(name: String): List<String> = File("resources", "$name.txt").readLines()
+
+fun readInputToInt(name: String): List<Int> = File("resources", "$name.txt").readLines().map { parseInt(it) }
 
 /**
  * Converts string to md5 hash.
